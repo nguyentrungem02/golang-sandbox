@@ -1,0 +1,7 @@
+# Ide
+.vscode/
+.idea/
+
+# Bin Directory
+/bin
+/dist
