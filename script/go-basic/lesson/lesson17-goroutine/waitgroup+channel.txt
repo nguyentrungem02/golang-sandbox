@@ -1,0 +1,41 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+func task(id int, ch chan<- string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Printf("task %d bat dau\n", id)
+	time.Sleep(1 * time.Second)
+	ch <- fmt.Sprintf("task %d ket thuc\n", id)
+	ch <- fmt.Sprintf("Ending %d ket thuc\n", id)
+}
+
+func main() {
+	start := time.Now()
+	var wg sync.WaitGroup
+	ch := make(chan string)
+
+	for i := 1; i <= 4; i++ {
+		wg.Add(1)
+		go task(i, ch, &wg)
+	}
+
+	for i := 1; i <= 8; i++ {
+		fmt.Print(<-ch)
+	}
+
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+
+	for value := range ch {
+		fmt.Println(value)
+	}
+
+	fmt.Println("Tong thoi gian hoan thanh: ", time.Since(start))
+}
