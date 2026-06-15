@@ -1,0 +1,550 @@
+{
+  "info": {
+    "_postman_id": "752c1464-41eb-442f-ac42-07eb03d6d05f",
+    "name": "Golang Learning",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50785195",
+    "_collection_link": "https://go.postman.co/collection/50785195-752c1464-41eb-442f-ac42-07eb03d6d05f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "[Auth] users list",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/users",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[Auth] users list soft deleted",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/users/soft-deleted",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "soft-deleted"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[Auth] a user by uuid",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/users/b6b30ffc-b5a3-4f47-9264-4306fd028068",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "b6b30ffc-b5a3-4f47-9264-4306fd028068"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[Auth] a user soft by uuid",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/users/db858f7d-f51a-4731-97b7-d301ab9af905",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "db858f7d-f51a-4731-97b7-d301ab9af905"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[Auth] a user trash",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/users/db858f7d-f51a-4731-97b7-d301ab9af905/trash",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "db858f7d-f51a-4731-97b7-d301ab9af905",
+                "trash"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[Auth] restore a user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/users/db858f7d-f51a-4731-97b7-d301ab9af905/restore",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "db858f7d-f51a-4731-97b7-d301ab9af905",
+                "restore"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[Auth] create a user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Trung Em\",\r\n    \"email\": \"trungem999@gmail.com\",\r\n    \"age\": 20,\r\n    \"password\": \"aA123456789@\",\r\n    \"status\": 1,\r\n    \"level\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/users",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[Auth] update a user by uuid",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Dai ka\",\r\n    \"email\": \"daika77@gmail.com\",\r\n    \"age\": 24,\r\n    \"password\": \"aA123456789@\",\r\n    \"status\": 3,\r\n    \"level\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/users/217c8e80-4dd9-4947-8aa0-b880e4fdb51b",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "217c8e80-4dd9-4947-8aa0-b880e4fdb51b"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"trungem999@gmail.com\",\r\n    \"password\": \"aA123456789@\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/auth/login",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forgot password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"trungem999@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/auth/forgot-password",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "forgot-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"token\": \"YQ-ofFRIofX_FOM8nhLRHw==\",\r\n    \"new_password\": \"aA123456789@\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/auth/reset-password",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[Auth] logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{ACCESS_TOKEN}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh_token\": \"ZTCR14GhaelgVIoa_1zRrQP98_ABpuoPXxDDxcgRpKk=\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/auth/logout",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "refresh-token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{X_API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh_token\": \"WJrrbOeqv5Ee-G6k7wcaqtDveIf2EXLDqkcYCwXo6o8=\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{API_ENDPOINT}}/api/v1/auth/refresh-token",
+              "host": [
+                "{{API_ENDPOINT}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "API_ENDPOINT",
+      "value": ""
+    },
+    {
+      "key": "X_API_KEY",
+      "value": ""
+    },
+    {
+      "key": "ACCESS_TOKEN",
+      "value": ""
+    }
+  ]
+}
